@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Burmese voiceless nasals</title>
+
+	<!-- import dependencies //-->
+	<script src="js/jquery-2.1.4.min.js"></script>
+
+	<!-- word list array //-->
+	<script src="js/stimuli.js"></script>
+
+	<!-- blocks and procedure script //-->
+	<script src="js/procedure.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+
+<div id="sentence">
+	Press the right arrow to begin
+</div>
+
+<script type="text/javascript">
+	// initialise here
+	stack = [];
+	stack = stack.concat(makeBlock(1, 0), makeBlock(2, 1));
+
+	index = 0;
+
+	// event listeners
+	$('body').keyup(function(e){
+	   if(e.keyCode == 39){
+	       if(index == stack.length) {
+	       		$('#sentence').text('End of experiment');
+	       } else {
+	       		$('#sentence').text(stack[index]);
+   			       // user has pressed space
+			       index += 1;
+	       }
+	   }
+	});
+</script>
+
+</body>
+</html>

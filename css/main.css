@@ -1,0 +1,19 @@
+@font-face {
+	font-family: 'Paduk';
+	src: url('../fonts/padauk.ttf');
+}
+
+#sentence {
+	font-family: 'Paduk';
+	font-size: 50pt;
+
+	text-align: center;
+	width:95%;
+
+	/* Vertical align in middle */
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}

@@ -23,18 +23,30 @@
 
 <script type="text/javascript">
 	// initialise here
-	stack = [];
-	stack = stack.concat(makeBlock(1, 0), makeBlock(2, 1));
+	experiment = [];
+	experiment = experiment.concat(makeBlock([4, 3, 10, 9, 8, 21, 29, 30, 16, 18], 0, "familiarisation"),
+								   makeBlock(blocks[1], 0, "Block 1"),
+								   makeBlock(blocks[2], 0, "Block 2"),
+								   makeBlock(blocks[3], 0, "Block 3"),
+								   makeBlock(blocks[4], 0, "Block 4"),
+								   makeBlock(blocks[5], 0, "Block 5"),
+								   makeBlock([4, 3, 10, 9, 8, 21, 29, 30, 16, 18], 1, "familiarisation"),
+								   makeBlock(blocks[4], 1, "Block 6"),
+								   makeBlock(blocks[3], 1, "Block 7"),
+								   makeBlock(blocks[2], 1, "Block 8"),
+								   makeBlock(blocks[1], 1, "Block 9"),
+								   makeBlock(blocks[5], 1, "Block 10")
+								   );
 
 	index = 0;
 
 	// event listeners
 	$('body').keyup(function(e){
 	   if(e.keyCode == 39){
-	       if(index == stack.length) {
+	       if(index == experiment.length) {
 	       		$('#sentence').text('End of experiment');
 	       } else {
-	       		$('#sentence').text(stack[index]);
+	       		$('#sentence').text(experiment[index]);
    			       // user has pressed space
 			       index += 1;
 	       }

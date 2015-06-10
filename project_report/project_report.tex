@@ -1,0 +1,40 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+%!BIB TS-program = biber
+
+\documentclass[11pt]{article}
+
+\usepackage[british]{babel}
+\usepackage{csquotes}
+\usepackage[backend=biber,natbib=true,style=apa]{biblatex}
+\DeclareLanguageMapping{english}{british-apa}
+
+\usepackage{mathspec}
+\setromanfont{Times New Roman}
+
+\usepackage{fullpage}
+
+\newcommand{\burm}[1]{{\fontspec[Script=Myanmar]{Padauk}#1}}
+
+\addbibresource{burmese.bib}
+
+\begin{document}
+	
+\LARGE Burmese Tone
+
+\normalsize
+
+\burm{ကျေးဇူးတင်ပါတယ်}
+
+\section{Background}
+
+\section{Previous descriptions}
+
+\section{Phonological accounts}
+
+\section{Phonetic evidence}
+
+\nocite{*}
+\printbibliography
+
+\end{document}
